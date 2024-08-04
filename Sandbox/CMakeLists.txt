@@ -6,22 +6,6 @@ endif ()
 
 # Define the executable target
 add_executable(Sandbox src/SandboxApp.cpp
-        src/Sandbox2D.cpp
-        src/Sandbox2D.h
-        src/ExampleLayer.cpp
-        src/ExampleLayer.h
-        
-        src/RocketGame/GameLayer.cpp
-        src/RocketGame/GameLayer.h
-        src/RocketGame/Player.h
-        src/RocketGame/Player.cpp
-        src/RocketGame/Level.h
-        src/RocketGame/Level.cpp
-        src/RocketGame/Random.h
-        src/RocketGame/Random.cpp
-        src/RocketGame/ParticleSystem.h
-        src/RocketGame/ParticleSystem.cpp
-
         src/ProceduralAnimation/MainLayer.h
         src/ProceduralAnimation/MainLayer.cpp
         )

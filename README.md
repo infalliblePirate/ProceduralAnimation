@@ -1,18 +1,16 @@
-# Deimos
-Deimos Engine is a future-to-be game engine
+![alt text](Sandbox/assets/screenshots/image.png)
 
-Features:
-- Supports Windows 10; linux - Ubuntu, Fedora
-- Profiling, logging
-- Renderer 2D - in progress
+# Procedurally animated fish
+The fish in this project follows your cursor and is procedurally animated, providing a dynamic interaction.
 
-Build system: CMake
-
-API: OpenGL
-
-Soon will be available:
-- Batch renderer
-- Physics engine
-- Games
-
-Tested on compilers: gcc
+## Build
+1. Run the `build.sh` script. This script will:
+    - fetch all necessary dependencies, including the Deimos engine
+    - configure and compile the project
+ ```
+ ./build.sh
+ ```
+ 2. Run the project
+ ```
+ ./build/Sandbox/Sandbox
+```

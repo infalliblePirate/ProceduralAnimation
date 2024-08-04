@@ -3,6 +3,8 @@ add_library(_Deimos INTERFACE)
 
 # Group source files based on platform
 set(COMMON_SOURCES
+        ./config.h
+
         src/Deimos/Core/Application.cpp
         src/Deimos/Core/EntryPoint.h
         src/Deimos/Core/Layer.cpp
@@ -63,7 +65,7 @@ endif ()
 # Add Deimos library
 add_library(Deimos STATIC ${COMMON_SOURCES} ${PLATFORM_SOURCES})
 
-set(CMAKE_BUILD_TYPE "Release")
+#set(CMAKE_BUILD_TYPE "Release")
 # Set default build type to Debug
 if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE "Debug")
@@ -168,3 +170,12 @@ set_target_properties(Deimos PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin/${outputdir}/Deimos"
         LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin/${outputdir}/Deimos"
 )
+
+# Use configure_file to generate config.h with directory variables
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/config.h.in
+    ${CMAKE_CURRENT_BINARY_DIR}/config.h
+)
+
+# Add the binary directory to the include path so that the generated config.h can be found
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
