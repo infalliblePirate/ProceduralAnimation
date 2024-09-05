@@ -13,7 +13,9 @@ fi
 # Create build directory if it doesn't exist
 BUILD_DIR="build"
 mkdir -p "$BUILD_DIR"
-
 cd "$BUILD_DIR"
 
-cmake ..
+# Configure Cmake
+cmake .. -DCMAKE_BUILD_TYPE=Debug # Alternatively DCMAKE_BUILD_TYPE=Release
+
+cmake --build .
