@@ -7,7 +7,7 @@ ENGINE_DIR="Deimos"
 if [ -d "$ENGINE_DIR" ]; then
     echo "Engine directory already exists. Skipping fetch."
 else 
-    git clone https://github.com/infalliblePirate/Engine.git "$ENGINE_DIR"
+    git clone --branch v1.0.0 https://github.com/infalliblePirate/Engine.git "$ENGINE_DIR"
 fi
 
 # Create build directory if it doesn't exist
